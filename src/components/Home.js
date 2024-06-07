@@ -21,14 +21,14 @@ const Home = () => {
           name="viewport"
         />
         <title>
-          Landwind - Tailwind CSS Landing Page Demo
+          bloom | Modern no-code platform 
         </title>
         <meta
-          content="Landwind - Tailwind CSS Landing Page"
+          content="bloom | Modern no-code platform "
           name="title"
         />
         <meta
-          content="Get started with a free and open-source landing page built with Tailwind CSS and the Flowbite component library."
+          content="bloom | Modern no-code platform "
           name="description"
         />
         <meta
@@ -43,46 +43,18 @@ const Home = () => {
           content="English"
           name="language"
         />
+      
         <meta
-          content="Themesberg"
-          name="author"
-        />
-        <meta
-          content="Landwind - Tailwind CSS Landing Page"
+          content="bloom | Modern no-code platform "
           property="og:title"
         />
-        <meta
-          content="Themesberg"
-          property="og:site_name"
-        />
-        <meta
-          content="https://https://demo.themesberg.com/landwind/"
-          property="og:url"
-        />
+        
+        
         <meta
           content="Get started with a free and open-source landing page for Tailwind CSS built with the Flowbite component library featuring dark mode, hero sections, pricing cards, and more."
           property="og:description"
         />
-        <meta
-          content=""
-          property="og:type"
-        />
-        <meta
-          content="https://themesberg.s3.us-east-2.amazonaws.com/public/github/landwind/og-image.png"
-          property="og:image"
-        />
-        <meta
-          content="summary"
-          name="twitter:card"
-        />
-        <meta
-          content="@themesberg"
-          name="twitter:site"
-        />
-        <meta
-          content="@themesberg"
-          name="twitter:creator"
-        />
+    
         <link
           href="/apple-touch-icon.png"
           rel="apple-touch-icon"
@@ -116,139 +88,11 @@ const Home = () => {
           href="./output.css"
           rel="stylesheet"
         />
-        <script
-          async
-          defer
-          src="https://buttons.github.io/buttons.js"
-        />
+        
       </head>
       <body>
         <header className="fixed w-full">
-          <nav className="bg-white border-gray-200 py-2.5 dark:bg-gray-900">
-            <div className="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
-              <a
-                className="flex items-center"
-                href="/"
-              >
-                <img
-                  alt="Logo"
-                  className="h-6 mr-3 sm:h-9"
-                  src="./images/logo.svg"
-                />
-                <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-                  bloom.ai
-                </span>
-              </a>
-              <div className="flex items-center lg:order-2">
-                
-              <a
-                className="text-white bg-gray-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-gray-600 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
-                href="/login"
-              >
-                Login
-              </a>
-
-              <a
-                className="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800"
-                href="/signup"
-              >
-                SignUp
-              </a>
-
-                <button
-                  aria-controls="mobile-menu-2"
-                  aria-expanded="false"
-                  className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                  data-collapse-toggle="mobile-menu-2"
-                  type="button"
-                >
-                  <span className="sr-only">
-                    Open main menu
-                  </span>
-                  <svg
-                    className="w-6 h-6"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      clipRule="evenodd"
-                      d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                      fillRule="evenodd"
-                    />
-                  </svg>
-                  <svg
-                    className="hidden w-6 h-6"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      clipRule="evenodd"
-                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                      fillRule="evenodd"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <div
-                className="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1"
-                id="mobile-menu-2"
-              >
-                <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-                  <li>
-                    <a
-                      aria-current="page"
-                      className="block py-2 pl-3 pr-4 text-white bg-purple-700 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-white"
-                      href="#"
-                    >
-                      Home
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
-                      href="#"
-                    >
-                      Company
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
-                      href="#"
-                    >
-                      Marketplace
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
-                      href="#"
-                    >
-                      Features
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
-                      href="#"
-                    >
-                      Team
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
-                      href="#"
-                    >
-                      Contact
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
+         
         </header>
         <section className="bg-white dark:bg-gray-900">
           <div className="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
@@ -308,7 +152,7 @@ const Home = () => {
             </div>
             <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
               <img
-                alt="hero image"
+                alt="hero"
                 src="./images/hero.png"
               />
             </div>
@@ -319,7 +163,7 @@ const Home = () => {
             <div className="grid grid-cols-2 gap-8 text-gray-500 sm:gap-12 sm:grid-cols-3 lg:grid-cols-6 dark:text-gray-400">
               <a
                 className="flex items-center lg:justify-center"
-                href="#"
+                href="/"
               >
                 <svg
                   className="h-9 hover:text-gray-900 dark:hover:text-white"
@@ -337,7 +181,7 @@ const Home = () => {
               </a>
               <a
                 className="flex items-center lg:justify-center"
-                href="#"
+                href="/"
               >
                 <svg
                   className="h-9 hover:text-gray-900 dark:hover:text-white"
@@ -355,7 +199,7 @@ const Home = () => {
               </a>
               <a
                 className="flex items-center lg:justify-center"
-                href="#"
+                href="/"
               >
                 <svg
                   className="h-8 hover:text-gray-900 dark:hover:text-white"
@@ -383,7 +227,7 @@ const Home = () => {
               </a>
               <a
                 className="flex items-center lg:justify-center"
-                href="#"
+                href="/"
               >
                 <svg
                   className="h-9 hover:text-gray-900 dark:hover:text-white"
@@ -399,7 +243,7 @@ const Home = () => {
               </a>
               <a
                 className="flex items-center lg:justify-center"
-                href="#"
+                href="/"
               >
                 <svg
                   className="h-9 hover:text-gray-900 dark:hover:text-white"
@@ -483,7 +327,7 @@ const Home = () => {
               </a>
               <a
                 className="flex items-center lg:justify-center"
-                href="#"
+                href="/"
               >
                 <svg
                   className="h-6 hover:text-gray-900 dark:hover:text-white"
@@ -556,7 +400,7 @@ const Home = () => {
                 </p>
                 <ul
                   className="pt-8 space-y-5 border-t border-gray-200 my-7 dark:border-gray-700"
-                  role="list"
+                 
                 >
                   <li className="flex space-x-3">
                     <svg
@@ -615,14 +459,14 @@ const Home = () => {
                 </p>
               </div>
               <img
-                alt="dashboard feature image"
+                alt="dashboard feature"
                 className="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex"
                 src="./images/feature-1.png"
               />
             </div>
             <div className="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
               <img
-                alt="feature image 2"
+                alt="feature2"
                 className="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex"
                 src="./images/feature-2.png"
               />
@@ -635,7 +479,7 @@ const Home = () => {
                 </p>
                 <ul
                   className="pt-8 space-y-5 border-t border-gray-200 my-7 dark:border-gray-700"
-                  role="list"
+                 
                 >
                   <li className="flex space-x-3">
                     <svg
@@ -746,7 +590,7 @@ const Home = () => {
                 <div>
                   <a
                     className="inline-flex items-center text-base font-medium text-purple-600 hover:text-purple-800 dark:text-purple-500 dark:hover:text-purple-700"
-                    href="#"
+                    href="/"
                   >
                     Explore Legality Guide
                     <svg
@@ -766,7 +610,7 @@ const Home = () => {
                 <div>
                   <a
                     className="inline-flex items-center text-base font-medium text-purple-600 hover:text-purple-800 dark:text-purple-500 dark:hover:text-purple-700"
-                    href="#"
+                    href="/"
                   >
                     Visit the Trust Center
                     <svg
@@ -882,7 +726,7 @@ const Home = () => {
               </blockquote>
               <figcaption className="flex items-center justify-center mt-6 space-x-3">
                 <img
-                  alt="profile picture"
+                  alt="profile"
                   className="w-6 h-6 rounded-full"
                   src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png"
                 />
@@ -926,7 +770,7 @@ const Home = () => {
                 </div>
                 <ul
                   className="mb-8 space-y-4 text-left"
-                  role="list"
+                 
                 >
                   <li className="flex items-center space-x-3">
                     <svg
@@ -1025,7 +869,7 @@ const Home = () => {
                 </ul>
                 <a
                   className="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"
-                  href="#"
+                  href="/"
                 >
                   Get started
                 </a>
@@ -1049,7 +893,7 @@ const Home = () => {
                 </div>
                 <ul
                   className="mb-8 space-y-4 text-left"
-                  role="list"
+                 
                 >
                   <li className="flex items-center space-x-3">
                     <svg
@@ -1148,7 +992,7 @@ const Home = () => {
                 </ul>
                 <a
                   className="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"
-                  href="#"
+                  href="/"
                 >
                   Get started
                 </a>
@@ -1170,7 +1014,7 @@ const Home = () => {
                 </div>
                 <ul
                   className="mb-8 space-y-4 text-left"
-                  role="list"
+                 
                 >
                   <li className="flex items-center space-x-3">
                     <svg
@@ -1269,7 +1113,7 @@ const Home = () => {
                 </ul>
                 <a
                   className="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"
-                  href="#"
+                  href="/"
                 >
                   Get started
                 </a>
@@ -1328,7 +1172,7 @@ const Home = () => {
                       Check out this guide to learn how to{' '}
                       <a
                         className="text-purple-600 dark:text-purple-500 hover:underline"
-                        href="#"
+                        href="/"
                       >
                         get started
                       </a>
@@ -1375,7 +1219,7 @@ const Home = () => {
                       Check out the{' '}
                       <a
                         className="text-purple-600 dark:text-purple-500 hover:underline"
-                        href="#"
+                        href="/"
                       >
                         Figma design system
                       </a>
@@ -1428,7 +1272,7 @@ const Home = () => {
                       <li>
                         <a
                           className="text-purple-600 dark:text-purple-500 hover:underline"
-                          href="#"
+                          href="/"
                         >
                           Landwind Pro
                         </a>
@@ -1436,7 +1280,7 @@ const Home = () => {
                       <li>
                         <a
                           className="text-purple-600 dark:text-purple-500 hover:underline"
-                          href="#"
+                          href="/"
                         >
                           Tailwind UI
                         </a>
@@ -1489,7 +1333,7 @@ const Home = () => {
                       <li>
                         <a
                           className="text-purple-600 dark:text-purple-500 hover:underline"
-                          href="#"
+                          href="/"
                         >
                           Landwind Pro
                         </a>
@@ -1497,7 +1341,7 @@ const Home = () => {
                       <li>
                         <a
                           className="text-purple-600 dark:text-purple-500 hover:underline"
-                          href="#"
+                          href="/"
                         >
                           Tailwind UI
                         </a>
@@ -1520,7 +1364,7 @@ const Home = () => {
               </p>
               <a
                 className="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800"
-                href="#"
+                href="/"
               >
                 Free trial for 30 days
               </a>
@@ -1538,7 +1382,7 @@ const Home = () => {
                   <li className="mb-4">
                     <a
                       className=" hover:underline"
-                      href="#"
+                      href="/"
                     >
                       About
                     </a>
@@ -1546,7 +1390,7 @@ const Home = () => {
                   <li className="mb-4">
                     <a
                       className="hover:underline"
-                      href="#"
+                      href="/"
                     >
                       Careers
                     </a>
@@ -1554,7 +1398,7 @@ const Home = () => {
                   <li className="mb-4">
                     <a
                       className="hover:underline"
-                      href="#"
+                      href="/"
                     >
                       Brand Center
                     </a>
@@ -1562,7 +1406,7 @@ const Home = () => {
                   <li className="mb-4">
                     <a
                       className="hover:underline"
-                      href="#"
+                      href="/"
                     >
                       Blog
                     </a>
@@ -1577,7 +1421,7 @@ const Home = () => {
                   <li className="mb-4">
                     <a
                       className="hover:underline"
-                      href="#"
+                      href="/"
                     >
                       Discord Server
                     </a>
@@ -1585,7 +1429,7 @@ const Home = () => {
                   <li className="mb-4">
                     <a
                       className="hover:underline"
-                      href="#"
+                      href="/"
                     >
                       Twitter
                     </a>
@@ -1593,7 +1437,7 @@ const Home = () => {
                   <li className="mb-4">
                     <a
                       className="hover:underline"
-                      href="#"
+                      href="/"
                     >
                       Facebook
                     </a>
@@ -1601,7 +1445,7 @@ const Home = () => {
                   <li className="mb-4">
                     <a
                       className="hover:underline"
-                      href="#"
+                      href="/"
                     >
                       Contact Us
                     </a>
@@ -1616,7 +1460,7 @@ const Home = () => {
                   <li className="mb-4">
                     <a
                       className="hover:underline"
-                      href="#"
+                      href="/"
                     >
                       Privacy Policy
                     </a>
@@ -1624,7 +1468,7 @@ const Home = () => {
                   <li className="mb-4">
                     <a
                       className="hover:underline"
-                      href="#"
+                      href="/"
                     >
                       Licensing
                     </a>
@@ -1632,7 +1476,7 @@ const Home = () => {
                   <li className="mb-4">
                     <a
                       className="hover:underline"
-                      href="#"
+                      href="/"
                     >
                       Terms
                     </a>
@@ -1647,7 +1491,7 @@ const Home = () => {
                   <li className="mb-4">
                     <a
                       className=" hover:underline"
-                      href="#"
+                      href="/"
                     >
                       About
                     </a>
@@ -1655,7 +1499,7 @@ const Home = () => {
                   <li className="mb-4">
                     <a
                       className="hover:underline"
-                      href="#"
+                      href="/"
                     >
                       Careers
                     </a>
@@ -1663,7 +1507,7 @@ const Home = () => {
                   <li className="mb-4">
                     <a
                       className="hover:underline"
-                      href="#"
+                      href="/"
                     >
                       Brand Center
                     </a>
@@ -1671,7 +1515,7 @@ const Home = () => {
                   <li className="mb-4">
                     <a
                       className="hover:underline"
-                      href="#"
+                      href="/"
                     >
                       Blog
                     </a>
@@ -1686,7 +1530,7 @@ const Home = () => {
                   <li className="mb-4">
                     <a
                       className="hover:underline"
-                      href="#"
+                      href="/"
                     >
                       iOS
                     </a>
@@ -1694,7 +1538,7 @@ const Home = () => {
                   <li className="mb-4">
                     <a
                       className="hover:underline"
-                      href="#"
+                      href="/"
                     >
                       Android
                     </a>
@@ -1702,7 +1546,7 @@ const Home = () => {
                   <li className="mb-4">
                     <a
                       className="hover:underline"
-                      href="#"
+                      href="/"
                     >
                       Windows
                     </a>
@@ -1710,7 +1554,7 @@ const Home = () => {
                   <li className="mb-4">
                     <a
                       className="hover:underline"
-                      href="#"
+                      href="/"
                     >
                       MacOS
                     </a>
@@ -1722,10 +1566,10 @@ const Home = () => {
             <div className="text-center">
               <a
                 className="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white"
-                href="#"
+                href="/"
               >
                 <img
-                  alt="Landwind Logo"
+                  alt="Landwind"
                   className="h-6 mr-3 sm:h-9"
                   src="./images/logo.svg"
                 />
@@ -1752,7 +1596,7 @@ const Home = () => {
                 <li>
                   <a
                     className="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400"
-                    href="#"
+                    href="/"
                   >
                     <svg
                       aria-hidden="true"
@@ -1771,7 +1615,7 @@ const Home = () => {
                 <li>
                   <a
                     className="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400"
-                    href="#"
+                    href="/"
                   >
                     <svg
                       aria-hidden="true"
@@ -1790,7 +1634,7 @@ const Home = () => {
                 <li>
                   <a
                     className="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400"
-                    href="#"
+                    href="/"
                   >
                     <svg
                       aria-hidden="true"
@@ -1805,7 +1649,7 @@ const Home = () => {
                 <li>
                   <a
                     className="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400"
-                    href="#"
+                    href="/"
                   >
                     <svg
                       aria-hidden="true"
@@ -1824,7 +1668,7 @@ const Home = () => {
                 <li>
                   <a
                     className="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400"
-                    href="#"
+                    href="/"
                   >
                     <svg
                       aria-hidden="true"
