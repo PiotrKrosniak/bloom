@@ -14,11 +14,9 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          DEPLOYMENT_KEY: ${{ secrets.DEPLOYMENT_KEY }}
-          DEPLOYMENT_SERVER: ${{ secrets.DEPLOYMENT_SERVER }}
-          DEPLOYMENT_USER: ${{ secrets.DEPLOYMENT_USER }}
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        DEPLOYMENT_KEY: ${{ secrets.DEPLOYMENT_KEY }}
 
     - name: Build and deploy
       env:
