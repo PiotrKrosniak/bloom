@@ -145,7 +145,7 @@ const Home = () => {
                       strokeLinejoin="round"
                     ></path>
                   </svg>
-                  Test - Signup Now
+                  Signup Now
                 </a>
 
               </div>
