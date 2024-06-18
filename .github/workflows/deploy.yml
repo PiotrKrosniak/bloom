@@ -28,6 +28,6 @@ jobs:
           git pull origin develop
           npm install
           npm run build
-          cp -r htdocs/bloom/build/* /var/www/html/
+          sudo cp -r htdocs/bloom/build/* /var/www/html/
           sudo systemctl restart nginx.service
         EOF
