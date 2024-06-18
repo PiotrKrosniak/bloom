@@ -3,7 +3,7 @@ name: Build and Deploy to server
 on:
   push:
     branches:
-      - main
+      - develop
 
 jobs:
   deploy:
@@ -13,8 +13,23 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          DEPLOYMENT_KEY: ${{ secrets.DEPLOYMENT_KEY }}
+          DEPLOYMENT_SERVER: ${{ secrets.DEPLOYMENT_SERVER }}
+          DEPLOYMENT_USER: ${{ secrets.DEPLOYMENT_USER }}
+
     - name: Build and deploy
+      env:
+        DEPLOYMENT_SERVER: ${{ secrets.DEPLOYMENT_SERVER }}
+        DEPLOYMENT_USER: ${{ secrets.DEPLOYMENT_USER }}
       run: |
+        ssh -o StrictHostKeyChecking=no $DEPLOYMENT_USER@$DEPLOYMENT_SERVER << 'EOF'
+          cd htdocs/bloom/
+          git pull origin develop
           npm install
           npm run build
           cd -r htdocs/bloom/build/* /var/www/html/
+          sudo systemctl restart nginx.service
+        EOF
