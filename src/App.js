@@ -5,9 +5,12 @@ import Navbar from './components/Navbar';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import UserDashboard from './components/UserDashboard';
+import { getToken } from './userActionHelper';
 
 function App() {
-  const [authenticated, setAuthenticated] = useState(false);
+  const isTokenSet = getToken();
+
+  const [authenticated, setAuthenticated] = useState(isTokenSet ? true : false);
 
   const PrivateRoute = ({ children }) => {
     return authenticated ? children : <Navigate to="/login" />;
@@ -15,10 +18,10 @@ function App() {
 
   return (
     <Router>
-    <Navbar />
+    <Navbar authenticated={authenticated}/>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/signup" element={<Signup setAuthenticated={setAuthenticated}/>} />
         <Route path="/login" element={<Login setAuthenticated={setAuthenticated} />} />
         <Route path="/user/:userId" element={<PrivateRoute><UserDashboard /></PrivateRoute>} />
       </Routes>
