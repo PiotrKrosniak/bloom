@@ -39,7 +39,7 @@ const Signup = ({ setAuthenticated }) => {
         setToken(data.jwt);
         setUser(data.user);
         setAuthenticated(true);
-        navigate(`/user/${response.data.user.id}`, { replace: true });
+        navigate(`/user/${data?.user?.id}`, { replace: true });
       }
     } catch (error) {
       console.error(error);
