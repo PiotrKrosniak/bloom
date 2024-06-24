@@ -20,15 +20,8 @@ jobs:
 
     - name: Set up environment variables
       run: |
-        if [ "${{ github.ref }}" == "refs/heads/master" ]; then
-          echo "API_URL= ${{ secrets.PROD_API_URL }}" >> .env
-          echo "ACCESS_AUTH_TOKEN= ${{ secrets.PROD_AUTH_API_TOKEN }}" >> .env
-        elif [ "${{ github.ref }}" == "refs/heads/develop" ]; then
           echo "API_URL= ${{ secrets.DEV_API_URL }}" >> .env
           echo "ACCESS_AUTH_TOKEN= ${{ secrets.DEV_AUTH_API_TOKEN }}" >> .env
-        else
-          echo "No matching environment found for branch ${GITHUB_REF}"
-        fi
 
     - name: Verify .env content
       run: cat .env
