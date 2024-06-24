@@ -1,7 +1,8 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
-const UserDashboard = ({ match }) => {
-  const { userId } = match.params;
+const UserDashboard = () => {
+  const { userId } = useParams();
 
   return (
     <div className="container mx-auto p-4">
