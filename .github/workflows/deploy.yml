@@ -18,15 +18,6 @@ jobs:
       with:
         ssh-private-key: ${{ secrets.DEPLOYMENT_KEY }}
 
-    - name: Set up environment variables
-      run: |
-          sudo touch .env
-          sudo echo "REACT_APP_API_URL= ${{ vars.DEV_API_URL }}" >> .env
-          sudo echo "REACT_APP_ACCESS_AUTH_TOKEN= ${{ vars.DEV_AUTH_API_TOKEN }}" >> .env
-
-    - name: Verify .env content
-      run: cat .env
-
     - name: Build and deploy
       env:
         DEPLOYMENT_SERVER: ${{ secrets.DEPLOYMENT_SERVER }}
@@ -35,6 +26,9 @@ jobs:
         ssh -o StrictHostKeyChecking=no $DEPLOYMENT_USER@$DEPLOYMENT_SERVER << 'EOF'
           cd htdocs/bloom/
           git pull origin develop
+          sudo echo "REACT_APP_API_URL=${{ vars.DEV_API_URL }}" >> .env
+          sudo echo "REACT_APP_ACCESS_AUTH_TOKEN=${{ vars.DEV_AUTH_API_TOKEN }}" >> .env
+          cat .env
           npm install
           cd backend
           npm install
