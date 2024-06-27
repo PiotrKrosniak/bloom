@@ -1,6 +1,9 @@
 import React from 'react';
-
+import { SERVER_URL, products } from '../constants';
+import { getUser } from '../userActionHelper';
 const Home = () => {
+  const user = getUser();
+
   return (
     <html
       key="1"
@@ -21,7 +24,7 @@ const Home = () => {
           name="viewport"
         />
         <title>
-          bloom | Modern no-code platform 
+          bloom | Modern no-code platform
         </title>
         <meta
           content="bloom | Modern no-code platform "
@@ -43,18 +46,18 @@ const Home = () => {
           content="English"
           name="language"
         />
-      
+
         <meta
           content="bloom | Modern no-code platform "
           property="og:title"
         />
-        
-        
+
+
         <meta
           content="Get started with a free and open-source landing page for Tailwind CSS built with the Flowbite component library featuring dark mode, hero sections, pricing cards, and more."
           property="og:description"
         />
-    
+
         <link
           href="/apple-touch-icon.png"
           rel="apple-touch-icon"
@@ -88,11 +91,11 @@ const Home = () => {
           href="./output.css"
           rel="stylesheet"
         />
-        
+
       </head>
       <body>
         <header className="fixed w-full">
-         
+
         </header>
         <section className="bg-white dark:bg-gray-900">
           <div className="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
@@ -103,7 +106,7 @@ const Home = () => {
                 products & brands.
               </h1>
               <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-                No-code product development platform production ready build based on the best tools available. Flat subscription pay only for resources you use, starting from 10$ per month.  
+                No-code product development platform production ready build based on the best tools available. Flat subscription pay only for resources you use, starting from 10$ per month.
               </p>
               <div className="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
                 <a
@@ -111,9 +114,9 @@ const Home = () => {
                   href="https://github.com/themesberg/landwind"
                 >
                   <svg width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
-                      <path d="M19 12H12M12 12L15 15M12 12L15 9" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                      <path d="M19 6V5C19 3.89543 18.1046 3 17 3H7C5.89543 3 5 3.89543 5 5V19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19V18" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
+                    <path d="M19 12H12M12 12L15 15M12 12L15 9" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M19 6V5C19 3.89543 18.1046 3 17 3H7C5.89543 3 5 3.89543 5 5V19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19V18" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
                   {' '}Learn More
                 </a>
                 <a
@@ -400,7 +403,7 @@ const Home = () => {
                 </p>
                 <ul
                   className="pt-8 space-y-5 border-t border-gray-200 my-7 dark:border-gray-700"
-                 
+
                 >
                   <li className="flex space-x-3">
                     <svg
@@ -479,7 +482,7 @@ const Home = () => {
                 </p>
                 <ul
                   className="pt-8 space-y-5 border-t border-gray-200 my-7 dark:border-gray-700"
-                 
+
                 >
                   <li className="flex space-x-3">
                     <svg
@@ -770,7 +773,7 @@ const Home = () => {
                 </div>
                 <ul
                   className="mb-8 space-y-4 text-left"
-                 
+
                 >
                   <li className="flex items-center space-x-3">
                     <svg
@@ -867,12 +870,15 @@ const Home = () => {
                     </span>
                   </li>
                 </ul>
-                <a
-                  className="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"
-                  href="/"
+                <button
+                  className="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900 SS_ProductCheckout"
+                  data-id={products[0]}
+                  type="button"
+                  data-email={user ? user.email : ""}
+                  data-url={SERVER_URL}
                 >
                   Get started
-                </a>
+                </button>
               </div>
               <div className="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
                 <h3 className="mb-4 text-2xl font-semibold">
@@ -893,7 +899,7 @@ const Home = () => {
                 </div>
                 <ul
                   className="mb-8 space-y-4 text-left"
-                 
+
                 >
                   <li className="flex items-center space-x-3">
                     <svg
@@ -990,12 +996,15 @@ const Home = () => {
                     </span>
                   </li>
                 </ul>
-                <a
-                  className="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"
-                  href="/"
+                <button
+                  className="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900 SS_ProductCheckout"
+                  data-id={products[1]}
+                  type="button"
+                  data-email={user ? user.email : ""}
+                  data-url={SERVER_URL}
                 >
                   Get started
-                </a>
+                </button>
               </div>
               <div className="flex flex-col max-w-lg p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
                 <h3 className="mb-4 text-2xl font-semibold">
@@ -1014,7 +1023,7 @@ const Home = () => {
                 </div>
                 <ul
                   className="mb-8 space-y-4 text-left"
-                 
+
                 >
                   <li className="flex items-center space-x-3">
                     <svg
@@ -1111,12 +1120,15 @@ const Home = () => {
                     </span>
                   </li>
                 </ul>
-                <a
-                  className="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900"
-                  href="/"
+                <button
+                  className="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:ring-purple-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white  dark:focus:ring-purple-900 SS_ProductCheckout"
+                  data-id={products[2]}
+                  type="button"
+                  data-email={user ? user.email : ""}
+                  data-url={SERVER_URL}
                 >
                   Get started
-                </a>
+                </button>
               </div>
             </div>
           </div>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { API, AUTH_TOKEN } from "../constants";
-import { setToken } from "../userActionHelper";
-import { useAuthContext } from "../context/AuthContext";
+import { setToken, setUser } from "../userActionHelper";
 import { useNavigate } from "react-router-dom";
 
 const Signup = ({ setAuthenticated }) => {
@@ -13,7 +12,6 @@ const Signup = ({ setAuthenticated }) => {
     "password": password,
     "username": userName
   };
-  const { setUser } = useAuthContext();
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
@@ -37,7 +35,11 @@ const Signup = ({ setAuthenticated }) => {
         setError(errorMessage);
       } else {
         setToken(data.jwt);
-        setUser(data.user);
+        setUser({
+          "email": data.user.email,
+          "userName": data.user.username,
+          "id": data.user.id
+        });
         setAuthenticated(true);
         navigate(`/user/${data?.user?.id}`, { replace: true });
       }
