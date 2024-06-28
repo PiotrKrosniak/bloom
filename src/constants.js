@@ -1,3 +1,21 @@
-export const API = "http://localhost:1337/api";
-export const AUTH_TOKEN = "d5ba693a28757a62a493eeee5c6f05cd3c50b173d174f213c1487733638ae215492a4dede8dc70235403dddb3bc4ad6759757f4583ab19c6949b57c4937d487b31abf33d55e9a5f9328cb7f3fcf2a24c4314a14d768306e3b9fd369ddd37f1fe6f1513bbafcb6b7ddd277f4ba3a731cc2520564fe1d5003b4a5304168f4bd8fe";
+export const API = process.env.REACT_APP_API_URL;
+export const AUTH_TOKEN = process.env.REACT_APP_ACCESS_AUTH_TOKEN;
 export const BEARER = "Bearer";
+export const SERVER_URL = getServerURL(API);
+export const products = [1,2,3];
+
+console.log("API_URL", API);
+
+function getServerURL(url) {
+  const urlObject = new URL(url);
+  return `${urlObject.protocol}//${urlObject.hostname}${urlObject.port ? `:${urlObject.port}` : ''}`;
+}
+
+// Function to inject the strapi-stripe script
+export function injectScript() {
+  const script = document.createElement('script');
+  script.src = `${SERVER_URL}/plugins/strapi-stripe/static/stripe.js`;
+  script.async = true;
+  document.head.appendChild(script);
+}
+

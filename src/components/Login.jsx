@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { API, AUTH_TOKEN } from "../constants";
 import { useNavigate } from "react-router-dom";
-import { setToken, removeToken } from "../userActionHelper";
+import { setToken, removeToken, setUser } from "../userActionHelper";
 
 const Login = ({ setAuthenticated }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+
   const navigate = useNavigate();
   setAuthenticated(false);
   removeToken();
@@ -31,6 +32,13 @@ const Login = ({ setAuthenticated }) => {
 
       setToken(response.data.jwt);
       setAuthenticated(true);
+      setUser(
+        {
+          "email": response.data.user.email,
+          "userName": response.data.user.username,
+          "id": response.data.user.id
+        }
+      );
       navigate(`/user/${response.data.user.id}`, { replace: true });
     } catch (err) {
       setError('Invalid email or password');
