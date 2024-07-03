@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import HomePage from './components/Home';
 import Navbar from './components/Navbar';
@@ -8,10 +8,11 @@ import UserDashboard from './components/UserDashboard';
 import PaymentSuccessPage from './components/PaymentSuccessPage';
 import { getToken } from './userActionHelper';
 import { UserProvider } from './context/UserProvider';
-import { injectScript } from './constants'
+import { injectScript } from './constants';
+import UserListPage from './components/UserListPage';
+import { getUserRole, getUser } from './userActionHelper';
 
 function App() {
-  // Call the function to inject the script
   injectScript();
   
   const isTokenSet = getToken();
@@ -21,18 +22,31 @@ function App() {
   const PrivateRoute = ({ children }) => {
     return authenticated ? children : <Navigate to="/login" />;
   };
+
+  const [currentRole, setCurrentRole] = useState();
+
+  useEffect (() =>{
+    if(authenticated){
+      const user = getUser();
+      const userRole = getUserRole(user?.id).then(roleId => {
+        console.log('User role ID:', roleId);
+        setCurrentRole(roleId);
+      });
+    }
+  },[])
   
 
   return (
     <UserProvider>
       <Router>
-        <Navbar authenticated={authenticated}/>
+        <Navbar authenticated={authenticated} currentRole={currentRole}/>
           <Routes>
             <Route path="/" element={<HomePage/>} />
-            <Route path="/signup" element={<Signup setAuthenticated={setAuthenticated}/>} />
+            <Route path="/signup" element={<Signup setAuthenticated={setAuthenticated} handle/>} />
             <Route path="/login" element={<Login setAuthenticated={setAuthenticated}/>} />
             <Route path="/user/:userId" element={<PrivateRoute><UserDashboard /></PrivateRoute>} />
             <Route path="/payment-successfull" element={<PaymentSuccessPage />}/>
+            <Route path="/user-list" element={<PrivateRoute><UserListPage /></PrivateRoute>}/>
           </Routes>
       </Router>
     </UserProvider>
