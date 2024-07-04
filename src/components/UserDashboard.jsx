@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { getUser, getUserRole } from "../userActionHelper";
 
-const UserDashboard = () => {
-  const { userId } = useParams();
+const UserDashboard = ({ authenticated, setCurrentRole }) => {
+  useEffect(() => {
+    if (authenticated) {
+      const user = getUser();
+      getUserRole(user?.id).then(roleId => {
+        console.log('User role ID:', roleId);
+        setCurrentRole(roleId);
+      });
+    }
+  }, []);
 
   return (
     <div className="container mx-auto p-4">

@@ -23,7 +23,7 @@ function App() {
     return authenticated ? children : <Navigate to="/login" />;
   };
 
-  const [currentRole, setCurrentRole] = useState();
+  const [currentRole, setCurrentRole] = useState(null);
 
   useEffect (() =>{
     if(authenticated){
@@ -44,7 +44,7 @@ function App() {
             <Route path="/" element={<HomePage/>} />
             <Route path="/signup" element={<Signup setAuthenticated={setAuthenticated} handle/>} />
             <Route path="/login" element={<Login setAuthenticated={setAuthenticated}/>} />
-            <Route path="/user/:userId" element={<PrivateRoute><UserDashboard /></PrivateRoute>} />
+            <Route path="/user/:userId" element={<PrivateRoute><UserDashboard authenticated={authenticated} setCurrentRole={setCurrentRole}/></PrivateRoute>} />
             <Route path="/payment-successfull" element={<PaymentSuccessPage />}/>
             <Route path="/user-list" element={<PrivateRoute><UserListPage /></PrivateRoute>}/>
           </Routes>
