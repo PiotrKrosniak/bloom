@@ -39,7 +39,7 @@ const UserListPage = () => {
                     <div className="flex flex-col text-left w-full mb-12">
                         {userList && userList.length > 0 ? (
                             <div className="overflow-x-auto flex justify-center">
-                                <table className="table-auto w-[800px] border-collapse border border-gray-200">
+                                <table className="table-auto w-[1000px] border-collapse border border-gray-200">
                                     <thead>
                                         <tr className="bg-gray-100 border-b border-gray-300">
                                             <th className="px-4 py-2 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">ID</th>
@@ -53,7 +53,9 @@ const UserListPage = () => {
                                     <tbody>
                                         {userList.map((user, index) => {
                                             const subscription = stripePayments?.res.find(payment => payment.stripePayment.some(p => p.customerEmail === user.email));
-                                            console.log("#3333", subscription);
+                                            const matchedPayment = subscription?.stripePayment.find(p => p.customerEmail === user.email);
+                                            const paymentCreatedAt = matchedPayment ? new Date(matchedPayment.createdAt) : null;
+
                                             return (
                                                 <tr key={user.id} className="border-b hover:bg-gray-100">
                                                     <td className="px-4 py-2 text-sm text-gray-900">{index + 1}</td>
@@ -68,7 +70,7 @@ const UserListPage = () => {
                                                         {subscription ? subscription.title : '-'}
                                                     </td>
                                                     <td className="px-4 py-2 text-sm text-gray-900">
-                                                        {subscription ? '' : '-'}
+                                                        {paymentCreatedAt ? format(paymentCreatedAt, 'dd-MM-yyyy HH:mm') : '-'}
                                                     </td>
                                                 </tr>
                                             );

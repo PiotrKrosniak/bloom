@@ -10,8 +10,8 @@ const Login = ({ setAuthenticated }) => {
   const [error, setError] = useState('');
 
   const navigate = useNavigate();
-  setAuthenticated(false);
   removeToken();
+  setAuthenticated(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
