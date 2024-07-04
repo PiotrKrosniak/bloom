@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { API, AUTH_TOKEN } from "../constants";
-import { setToken, setUser } from "../userActionHelper";
+import { setToken, setUser, removeToken } from "../userActionHelper";
 import { useNavigate } from "react-router-dom";
 
 const Signup = ({ setAuthenticated }) => {
@@ -28,7 +28,7 @@ const Signup = ({ setAuthenticated }) => {
         },
         body: JSON.stringify(userData),
       });
-
+      removeToken();
       const data = await response.json();
       if (data?.error) {
         const errorMessage = !data.error.details.errors ? data.error.message : data.error.details?.errors[0]?.message;

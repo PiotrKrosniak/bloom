@@ -1,4 +1,4 @@
-import { AUTH_TOKEN } from "./constants";
+import { AUTH_TOKEN, API } from "./constants";
 
 export const getToken = () => {
   return localStorage.getItem("userToken");
@@ -11,6 +11,7 @@ export const setToken = (token) => {
 };
 
 export const removeToken = () => {
+  localStorage.removeItem("userToken");
   localStorage.removeItem("user");
 };
 
@@ -24,3 +25,22 @@ export const setUser = (token) => {
     localStorage.setItem("user", JSON.stringify(token));
   }
 };
+
+export const getUserRole = async (userId) => {
+  try{
+    const response = await fetch(`${API}/users/${userId}?populate=role`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": 'Bearer ' + AUTH_TOKEN
+        }
+      });
+
+      const data = await response.json();
+      return data ? data.role?.id : 1;
+  }
+  catch(error) {
+      console.error(error);
+  }
+   
+}
